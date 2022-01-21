@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,6 +36,7 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Log in</button>
+                        <a href="/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
                     </form>
 
                     <hr>
@@ -50,6 +51,90 @@
             </div>
         </div>
     </div>
+</body>
+
+</html> -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JFT - HelpDesk (Login)</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+    </style>
+
+</head>
+
+<body class="text-center">
+
+    <main class="form-signin">
+        <div>
+
+            <form method="POST" action="/login">
+                <img class="mb-4" src="/image/logo.png" alt="" width="70" height="70">
+                <h1 class="h3 mb-3 fw-normal"><strong>Log In</strong></h1>
+                <div>
+                    <% if(errors != "") { %>
+                        <% errors.forEach((item) => { %>
+                            <div class="alert alert-danger">
+                                <%- item %>
+                            </div>
+                            <% }); %>
+                                <% } %>
+                </div>
+                <label for="email" class="visually-hidden">Email address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+                <label for="password" class="visually-hidden">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                <div class="checkbox mb-3">
+                    <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
+                <!-- <a href="/google" class="w-100 btn btn-lg btn-danger"><span></span> Google</a> 
+                -->
+                <p id="pOR"> OR </p>
+                <div class='w-100 g-sign-in-button' onclick="window.location.href='/google'">
+                    <div class=content-wrapper>
+                        <div class='logo-wrapper'>
+                            <img src='https://developers.google.com/identity/images/g-logo.png'>
+                        </div>
+                        <span class='text-container'>
+                      <span>Log in with Google</span>
+                        </span>
+                    </div>
+                </div>
+        </div>
+        <div id="divG">
+            If you haven't had an account. <a href="/register">Create a new account</a>.
+        </div>
+        <p class="mt-5 mb-3 text-muted">&copy; Jellyfish Technologies.com</p>
+        </form>
+    </main>
+
+
+
 </body>
 
 </html>

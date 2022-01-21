@@ -1,5 +1,7 @@
-import DBConnection from "./../configs/DBConnection";
-import bcrypt from "bcryptjs";
+// import DBConnection from "./../configs/DBConnection";
+const DBConnection = require('../configs/DBConnection')
+    // import bcrypt from "bcryptjs";
+const bcrypt = require('bcryptjs')
 
 
 let createNewUser = (data) => {

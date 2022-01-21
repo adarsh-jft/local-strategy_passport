@@ -7,7 +7,7 @@ let getPageRegister = (req, res) => {
     });
 };
 
-let createNewUser = async (req, res) => {
+let createNewUser = async(req, res) => {
     //validate required fields
     let errorsArr = [];
     let validationErrors = validationResult(req);

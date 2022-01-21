@@ -13,7 +13,7 @@ let router = express.Router();
 
 let initWebRoutes = (app) => {
     router.get("/", loginController.checkLoggedIn, homePageController.handleHelloWorld);
-    router.get("/login",loginController.checkLoggedOut, loginController.getPageLogin);
+    router.get("/login", loginController.checkLoggedOut, loginController.getPageLogin);
     router.post("/login", passport.authenticate("local", {
         successRedirect: "/",
         failureRedirect: "/login",

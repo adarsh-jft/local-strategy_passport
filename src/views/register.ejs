@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -58,6 +58,75 @@
             </div>
         </div>
     </div>
+</body>
+
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JFT - HelpDesk (Sign Up)</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+    </style>
+
+
+
+</head>
+
+<body class="text-center">
+
+    <main class="form-signin">
+
+        <form method="POST" action="/register">
+            <img class="mb-4" src="image/logo.png" alt="" width="70" height="70">
+            <h1 class="h3 mb-3 fw-normal"><strong>Sign Up</strong></h1>
+            <div>
+                <% if(errors != "") { %>
+                    <% errors.forEach((item) => { %>
+                        <div class="alert alert-danger">
+                            <%- item %>
+                        </div>
+                        <% }); %>
+                            <% } %>
+            </div>
+            <label for="fullName" class="visually-hidden">Name</label>
+            <input type="Name" id="fullName" name="fullName" class="form-control" placeholder="Name" required autofocus>
+            <label for="email" class="visually-hidden">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required>
+            <label for="password" class="visually-hidden">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <label for="passwordConfirmation" class="visually-hidden">Confirm Password</label>
+            <input type="password" id="passwordConfirmation" name="passwordConfirmation" class="form-control" placeholder="Confirm Password" required>
+            <p class="mb-4">Already have an account? <a href="/login">Log in</a></p>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Create Account</button>
+            </div>
+            <p class="mt-5 mb-3 text-muted">&copy; Jellyfish Technologies.com</p>
+        </form>
+    </main>
+
+
+
 </body>
 
 </html>
